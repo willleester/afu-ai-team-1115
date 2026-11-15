@@ -114,6 +114,32 @@ section{padding-block:48px;border-top:1px solid var(--rule)}
 .aside{background:var(--card);border:1px solid var(--rule);padding:18px 22px;font-size:15.5px;margin-top:24px}
 .aside b{font-family:var(--serif)}
 
+/* Levels grouped by Lv */
+.lvgroups{display:grid;gap:0;margin-top:28px;border-top:1px solid var(--text)}
+.lvg{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:20px 0;border-bottom:1px solid var(--rule)}
+.lvh{display:grid;align-content:start;gap:2px}
+.lvn{font-family:var(--serif);font-weight:900;font-size:30px;line-height:1.1}
+.lvh b{font-family:var(--serif);font-size:19px}
+.lvh small{font-size:13px;color:var(--muted)}
+.lvl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.lvl li{display:grid;grid-template-columns:2em minmax(0,1fr);gap:8px;background:var(--card);border:1px solid var(--rule);padding:14px 16px;min-width:0}
+.lvl .no{font-family:var(--serif);font-weight:700;font-size:22px;line-height:1.2}
+.lvl h3{font-family:var(--serif);font-size:16.5px;margin:0 0 4px;line-height:1.4}
+.lvl p{font-size:14px;color:var(--muted);margin:0;line-height:1.65}
+.lvl .next{background:transparent;border-style:dashed;border-color:var(--muted)}
+.lvl .next h3,.lvl .next .no{color:var(--muted)}
+.team{margin-top:32px;background:var(--card);border:1px solid var(--rule);padding:24px}
+.team-h{font-family:var(--serif);font-weight:700;font-size:19px;margin-bottom:16px}
+.org{display:grid;gap:8px;justify-items:center;max-width:620px;margin:0 auto}
+.org .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;width:100%}
+.node{border:1px solid var(--rule);background:var(--page);padding:10px 16px;text-align:center;width:100%;max-width:320px;justify-self:center}
+.org .row .node{max-width:none}
+.node b{font-family:var(--serif);font-size:16.5px;display:block}
+.node span{font-size:13.5px;color:var(--muted)}
+.node.me{border-color:var(--text)}
+.brainnode{max-width:none;margin-top:6px;border-style:dashed;border-color:var(--text)}
+.link{color:var(--muted);font-family:var(--serif);font-size:20px;line-height:1}
+
 /* Pull quote and sayings */
 .pull{margin:36px 0;padding:8px 0 8px 24px;border-left:2px solid var(--text)}
 .pull p{font-family:var(--serif);font-size:clamp(22px,3vw,28px);line-height:1.55;font-weight:700;margin:0 0 8px;text-wrap:balance}
@@ -155,6 +181,7 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
   .reels{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .reels .flat{grid-column:1/-1}
+  .lvg{grid-template-columns:minmax(0,1fr);gap:12px}
   .flow{grid-template-columns:minmax(0,1fr)}
   .arrow{transform:rotate(90deg)}
   .layers{grid-template-columns:minmax(0,1fr)}
@@ -221,13 +248,13 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
         <h3 style="font-family:var(--serif);font-size:21px;margin:32px 0 4px">AI 使用的四個階段</h3>
         <p style="margin-bottom:0">福哥把 AI 的用法分成四階。大部分人停在前兩階：會問 AI、會叫 AI 寫，但事情最後還是自己做。這堂課的目標，是把大家帶到第 4 階。</p>
         <ol class="tiers" aria-label="AI 使用四階段的人數比例">
-          <li><span class="lv">第 1 階</span><div><div class="lab">問 AI</div><div class="track"><div class="bar" style="width:100%"></div></div></div><span class="pct">40%</span></li>
-          <li><span class="lv">第 2 階</span><div><div class="lab">叫 AI 寫</div><div class="track"><div class="bar" style="width:90%"></div></div></div><span class="pct">36%</span></li>
-          <li><span class="lv">第 3 階</span><div><div class="lab">介於兩者之間</div><div class="track"><div class="bar" style="width:47.5%"></div></div></div><span class="pct">19%</span></li>
-          <li class="goal"><span class="lv">第 4 階</span><div><div class="lab">AI 團隊達成目標<small>今天的目標</small></div><div class="track"><div class="bar" style="width:12.5%"></div></div></div><span class="pct">5%</span></li>
+          <li><span class="lv">第 1 階</span><div><div class="lab">你問 AI 答</div><div class="track"><div class="bar" style="width:100%"></div></div></div><span class="pct">40%</span></li>
+          <li><span class="lv">第 2 階</span><div><div class="lab">你說 AI 寫</div><div class="track"><div class="bar" style="width:90%"></div></div></div><span class="pct">36%</span></li>
+          <li><span class="lv">第 3 階</span><div><div class="lab">你說 AI 做</div><div class="track"><div class="bar" style="width:47.5%"></div></div></div><span class="pct">19%</span></li>
+          <li class="goal"><span class="lv">第 4 階</span><div><div class="lab">你是專案總監<small>AI 團隊達成目標，今天的目標</small></div><div class="track"><div class="bar" style="width:12.5%"></div></div></div><span class="pct">5%</span></li>
         </ol>
         <p class="src">76% 的人停在前兩階。數字取自福哥課堂投影片，長條以第 1 階為 100%。</p>
-        <p>第 4 階是由人設定目標，AI 團隊自己分工協作、共享記憶、定時回報。回頭看今天的關卡，其實就是一階一階往上走：先讓 AI 讀資料、寫文件，再讓它動手執行，最後讓好幾個 AI 共用同一個大腦。</p>
+        <p>第 4 階是由人設定目標，AI 團隊自己分工協作、共享記憶、定時回報。今天的九道關卡，就是照著這四階一階一階往上走：先問 AI，再叫它寫，接著叫它做，最後由我當專案總監，帶著 AI 營運長、社群 AI 和共同大腦一起推廣加盟。</p>
       </div>
     </section>
 
@@ -239,7 +266,7 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
           <img src="media/p3179.jpg" alt="投影幕上的綠色投影片寫著：有問題先問 AI" width="1600" height="1200">
           <figcaption>開場投影片只有一句話。</figcaption>
         </figure>
-        <p class="lead">早上十點，投影幕上只寫了一句話：有問題先問 AI。接著每個人打開課程網址，關卡一關一關解鎖。題目是一家虛構的連鎖咖啡店，資料、任務、答案檢查都在網頁上，卡住了就問自己的 AI，不用等老師一個一個教。</p>
+        <p class="lead">早上十點，投影幕上只寫了一句話：有問題先問 AI。接著每個人打開課程網址，關卡一關一關解鎖。題目是一家虛構的連鎖咖啡店「好日子咖啡」。每一關都從老闆王大福的一封信開始，我們從到職第一週的新人做起，一路做到專案總監。資料、任務、答案檢查都在網頁上，卡住了就問自己的 AI，不用等老師一個一個教。</p>
         <p>我覺得這個設計最厲害的地方，是讓「學」和「做」變成同一件事。</p>
         <div class="clear"></div>
       </div>
@@ -256,17 +283,55 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
       <div class="col">
         <div class="kicker">第三部分</div>
         <h2>今天闖過的關卡</h2>
-        <p>每一關都比上一關多交給 AI 一點。從讓 AI 讀懂資料，一路到讓 AI 自己動手完成工作，再把做法存成 Skill，最後讓好幾個 AI 共用同一個大腦。</p>
+        <p>九道關卡分成四個等級，每一關都比上一關多交給 AI 一點。從讓 AI 讀懂資料，到讓 AI 自己動手，再到當上專案總監，帶著一支 AI 團隊推廣加盟。</p>
       </div>
       <div class="wide">
-        <ol class="stages">
-          <li><span class="no">1</span><h3>讀懂資料</h3><p>讓 AI 從表格、白板、顧客意見裡找出事實，再學會用對的身分和口吻向主管報告。</p></li>
-          <li><span class="no">2</span><h3>整理成文件</h3><p>把幾份零散資料交給 AI，整理成一份有觀察、有建議的週報。</p></li>
-          <li><span class="no">3</span><h3>換個說法</h3><p>同樣的內容，請 AI 換成胡適白話文的語氣。學到的是：說話有溫度，事項有重點。</p></li>
-          <li><span class="no">4</span><h3>讓 AI 動手</h3><p>透過 Codex 讓 AI 實際操作工具，把文章發布到電子報平台。</p></li>
-          <li><span class="no">5</span><h3>存成 Skill</h3><p>把做法寫成一份說明檔，下次換上新資料，AI 就照同樣的流程再做一次。</p></li>
-          <li><span class="no">6</span><h3>加盟海報</h3><p>讓 AI 依法務版資料做海報和兩百字文案，費用寫清楚，不做沒確認過的承諾。</p></li>
-        </ol>
+        <div class="lvgroups">
+          <div class="lvg">
+            <div class="lvh"><span class="lvn">Lv.1</span><b>你問 AI 答</b><small>到職第 1–2 週</small></div>
+            <ol class="lvl">
+              <li><span class="no">1</span><div><h3>讀懂這一週的資料</h3><p>讓 AI 讀業績表、白板、顧客意見，答對題目，再用對的口吻向總經理報告。</p></div></li>
+              <li><span class="no">2</span><div><h3>第 1 期員工週報</h3><p>把業績、週會逐字稿、顧客意見交給 AI，整理成一份週報。</p></div></li>
+            </ol>
+          </div>
+          <div class="lvg">
+            <div class="lvh"><span class="lvn">Lv.2</span><b>你說 AI 寫</b><small>到職第 3 週</small></div>
+            <ol class="lvl">
+              <li><span class="no">3</span><div><h3>寫得像你自己</h3><p>請 AI 換成胡適白話文的語氣改寫。說話有溫度，事項有重點。</p></div></li>
+            </ol>
+          </div>
+          <div class="lvg">
+            <div class="lvh"><span class="lvn">Lv.3</span><b>你說 AI 做</b><small>到職第 4–5 週</small></div>
+            <ol class="lvl">
+              <li><span class="no">4</span><div><h3>叫 AI 自己去開電子報</h3><p>透過 Codex，讓 AI 自己把文章發布到 Substack。</p></div></li>
+              <li><span class="no">5</span><div><h3>把做法固定下來，做成 skill</h3><p>把「週報到電子報」寫成 Skill，下次換上新資料直接叫出來用。</p></div></li>
+            </ol>
+          </div>
+          <div class="lvg">
+            <div class="lvh"><span class="lvn">Lv.4</span><b>你是專案總監</b><small>加盟開放第 1–3 週</small></div>
+            <ol class="lvl">
+              <li><span class="no">6</span><div><h3>消化加盟辦法，寫文案、做海報</h3><p>讀法務版加盟辦法，做出兩百字文案和海報，不做沒確認過的承諾。</p></div></li>
+              <li><span class="no">7</span><div><h3>共同大腦</h3><p>建一個所有 AI 開工前都先讀的資料夾。</p></div></li>
+              <li><span class="no">8</span><div><h3>任命 AI 營運長</h3><p>請 AI 當營運長，每天看報表、分派工作，先交出加盟推廣的分工計畫。</p></div></li>
+              <li><span class="no">9</span><div><h3>開一個練習社群</h3><p>讓社群 AI 在 FB 開一個加盟練習社群，放上文案和海報，標明是課程練習。</p></div></li>
+              <li class="next"><span class="no">10</span><div><h3>等老師開放</h3><p>老師一開，按鈕就會亮。</p></div></li>
+            </ol>
+          </div>
+        </div>
+        <div class="team">
+          <div class="team-h">闖完第 9 關，我手上的 AI 團隊</div>
+          <div class="org">
+            <div class="node me"><b>我</b><span>專案總監，設定目標、做最後確認</span></div>
+            <div class="link" aria-hidden="true">↓</div>
+            <div class="node"><b>AI 營運長</b><span>看報表、分派工作，有事先回報</span></div>
+            <div class="link" aria-hidden="true">↓</div>
+            <div class="row">
+              <div class="node"><b>社群 AI</b><span>經營加盟練習社群</span></div>
+              <div class="node"><b>更多幫手</b><span>電子報、週報、廣告⋯⋯依分工計畫加入</span></div>
+            </div>
+            <div class="node brainnode"><b>共同大腦</b><span>每個 AI 開工前都先讀</span></div>
+          </div>
+        </div>
         <div class="strip">
           <figure><img src="media/p3180.jpg" alt="投影幕顯示課程網址 aiteam.afu.tw/1115" loading="lazy" width="1600" height="1200"><figcaption>打開課程網址，開始闖關。</figcaption></figure>
           <figure><img src="media/p3181.jpg" alt="投影幕上的咖啡店營收資料表" loading="lazy" width="1600" height="1200"><figcaption>第一關的練習資料，大家各自讓 AI 來讀。</figcaption></figure>
