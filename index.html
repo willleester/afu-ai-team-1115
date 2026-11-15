@@ -140,6 +140,43 @@ section{padding-block:48px;border-top:1px solid var(--rule);scroll-margin-top:56
 .brainnode{max-width:none;margin-top:6px;border-style:dashed;border-color:var(--text)}
 .link{color:var(--muted);font-family:var(--serif);font-size:20px;line-height:1}
 
+/* Team tree: solid lines = who assigns work; dashed = everyone reads the shared brain */
+.orgtree{--line:#B4ACA3;display:grid;justify-items:center;max-width:880px;margin:0 auto}
+.tn{position:relative;display:grid;gap:2px;justify-items:center;align-content:start;width:100%;background:var(--page);border:1px solid var(--rule);padding:12px 12px 12px;text-align:center}
+.tn small{font-size:11.5px;letter-spacing:.14em;color:var(--muted)}
+.tn b{font-family:var(--serif);font-size:17.5px;line-height:1.35}
+.tn span{font-size:13.5px;color:var(--muted);line-height:1.55}
+.tn em{font-style:normal;font-size:12px;margin-top:6px;display:inline-flex;align-items:center;gap:6px}
+.tn em::before{content:"";width:8px;height:8px;border-radius:50%}
+.tn em.gpt::before{background:#16875E}
+.tn em.cl::before{background:#C0512F}
+.tn.me{max-width:230px;background:var(--card);border-color:var(--text)}
+.tn.lead{max-width:270px}
+.stem{width:1px;height:22px;background:var(--line)}
+.branch{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;width:100%;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:calc((100% - 42px)/8);right:calc((100% - 42px)/8);height:1px;background:var(--line)}
+.branch .tn::before{content:"";position:absolute;top:-19px;left:50%;width:1px;height:19px;background:var(--line)}
+.branch .tn::after{content:"";position:absolute;bottom:-20px;left:50%;height:19px;border-left:1px dashed var(--text)}
+.brainband{width:100%;margin-top:19px;display:grid;gap:4px;justify-items:center;text-align:center;border:1px dashed var(--text);background:var(--card);padding:14px 16px 16px}
+.brainband b{font-family:var(--serif);font-size:18.5px}
+.brainband span{font-size:13.5px;color:var(--muted)}
+.brainband .files{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:6px}
+.brainband code{font-family:ui-monospace,Consolas,monospace;font-size:12px;border:1px solid var(--rule);background:var(--page);padding:1px 8px}
+.orgkey{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-top:16px;font-size:12.5px;color:var(--muted)}
+.orgkey span{display:inline-flex;align-items:center;gap:7px}
+.orgkey i{display:inline-block}
+.orgkey .k-gpt,.orgkey .k-cl{width:8px;height:8px;border-radius:50%}
+.orgkey .k-gpt{background:#16875E}
+.orgkey .k-cl{background:#C0512F}
+.orgkey .k-solid{width:18px;border-top:1px solid #B4ACA3}
+.orgkey .k-dash{width:18px;border-top:1px dashed var(--text)}
+.orgnote{text-align:center;font-size:14px;color:var(--text);margin:12px 0 0}
+@media (max-width:720px){
+  .branch{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:10px;border:1px solid var(--line)}
+  .branch::before,.branch .tn::before,.branch .tn::after{display:none}
+  .brainband{margin-top:0;border-top:0}
+}
+
 /* Tool screenshot and recap video */
 .shot{margin:28px 0}
 .shot img{display:block;width:100%;height:auto;border:1px solid var(--rule)}
@@ -347,19 +384,30 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
         </div>
         <div class="team">
           <div class="team-h">闖完第 14 關，我手上的 AI 團隊</div>
-          <div class="org">
-            <div class="node me"><b>我</b><span>專案總監，設定目標、做最後確認</span></div>
-            <div class="link" aria-hidden="true">↓</div>
-            <div class="node"><b>AI 營運長</b><span>看報表、分派工作，有事先回報</span></div>
-            <div class="link" aria-hidden="true">↓</div>
-            <div class="row">
-              <div class="node"><b>社群 AI</b><span>對外，經營加盟練習社群</span></div>
-              <div class="node"><b>週報 AI</b><span>對內，寫員工週報和加盟特刊</span></div>
-              <div class="node"><b>Claude</b><span>宣傳頁、短影音</span></div>
-              <div class="node"><b>AI 工程師</b><span>寫程式、做小工具</span></div>
+          <div class="orgtree">
+            <div class="tn me"><small>專案總監</small><b>我</b><span>設定目標、做最後確認</span></div>
+            <div class="stem" aria-hidden="true"></div>
+            <div class="tn lead"><small>統籌</small><b>AI 營運長</b><span>看報表、分派工作，有事先回報</span><em class="gpt">Codex</em></div>
+            <div class="stem" aria-hidden="true"></div>
+            <div class="branch">
+              <div class="tn"><small>對外</small><b>社群 AI</b><span>經營加盟練習社群</span><em class="gpt">Codex</em></div>
+              <div class="tn"><small>對內</small><b>週報 AI</b><span>員工週報、加盟特刊</span><em class="gpt">Codex</em></div>
+              <div class="tn"><small>製作</small><b>Claude</b><span>宣傳頁、短影音</span><em class="cl">Claude</em></div>
+              <div class="tn"><small>工具</small><b>AI 工程師</b><span>寫程式、做小工具</span><em class="cl">Claude</em></div>
             </div>
-            <div class="node brainnode"><b>共同大腦</b><span>每個 AI 開工前都先讀</span></div>
+            <div class="brainband">
+              <b>共同大腦</b>
+              <span>營運長和四位助理，開工前都先讀同一個資料夾。換一個 AI，也接得上。</span>
+              <div class="files"><code>START-HERE.md</code><code>AGENTS.md</code><code>TEAM.md</code><code>wiki/</code><code>raw/</code><code>log.md</code></div>
+            </div>
           </div>
+          <div class="orgkey">
+            <span><i class="k-gpt"></i>在 Codex 上工（ChatGPT 帳號）</span>
+            <span><i class="k-cl"></i>在 Claude 上工</span>
+            <span><i class="k-solid"></i>分派工作</span>
+            <span><i class="k-dash"></i>開工前先讀</span>
+          </div>
+          <p class="orgnote">所有對外發布的內容，最後都要回到我這裡確認，AI 不自己決定發布。</p>
         </div>
         <div class="strip">
           <figure><img src="media/p3180.jpg" alt="投影幕顯示課程網址 aiteam.afu.tw/1115" loading="lazy" width="1600" height="1200"><figcaption>打開課程網址，開始闖關。</figcaption></figure>
