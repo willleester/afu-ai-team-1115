@@ -140,6 +140,15 @@ section{padding-block:48px;border-top:1px solid var(--rule)}
 .brainnode{max-width:none;margin-top:6px;border-style:dashed;border-color:var(--text)}
 .link{color:var(--muted);font-family:var(--serif);font-size:20px;line-height:1}
 
+/* Tool screenshot and recap video */
+.shot{margin:28px 0}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--rule)}
+.rules b{font-family:var(--serif)}
+.recap{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:28px;align-items:center;margin:20px 0 28px;padding:20px;background:var(--card);border:1px solid var(--rule)}
+.recap video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--text)}
+.recap h3{font-family:var(--serif);font-size:21px;margin:0 0 8px}
+.recap p{margin:0;font-size:15.5px}
+
 /* Pull quote and sayings */
 .pull{margin:36px 0;padding:8px 0 8px 24px;border-left:2px solid var(--text)}
 .pull p{font-family:var(--serif);font-size:clamp(22px,3vw,28px);line-height:1.55;font-weight:700;margin:0 0 8px;text-wrap:balance}
@@ -197,6 +206,8 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 @media (max-width:560px){
   .inset{float:none;width:100%;margin:0 0 20px}
   .pair{grid-template-columns:minmax(0,1fr)}
+  .recap{grid-template-columns:minmax(0,1fr)}
+  .recap video{max-width:260px;margin:0 auto}
   .speaker{grid-template-columns:minmax(0,1fr)}
   .speaker div+div{padding-left:0;border-left:0;border-top:1px solid var(--rule)}
   .tiers li{grid-template-columns:4.2em minmax(0,1fr) 3.2em;gap:10px}
@@ -213,6 +224,7 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
       <li><a href="#how">怎麼上課</a></li>
       <li><a href="#levels">闖關</a></li>
       <li><a href="#brain">共同大腦</a></li>
+      <li><a href="#tool">討論室</a></li>
       <li><a href="#scenes">現場</a></li>
       <li><a href="#notes">心得</a></li>
     </ul>
@@ -254,7 +266,7 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
           <li class="goal"><span class="lv">第 4 階</span><div><div class="lab">你是專案總監<small>AI 團隊達成目標，今天的目標</small></div><div class="track"><div class="bar" style="width:12.5%"></div></div></div><span class="pct">5%</span></li>
         </ol>
         <p class="src">76% 的人停在前兩階。數字取自福哥課堂投影片，長條以第 1 階為 100%。</p>
-        <p>第 4 階是由人設定目標，AI 團隊自己分工協作、共享記憶、定時回報。今天的九道關卡，就是照著這四階一階一階往上走：先問 AI，再叫它寫，接著叫它做，最後由我當專案總監，帶著 AI 營運長、社群 AI 和共同大腦一起推廣加盟。</p>
+        <p>第 4 階是由人設定目標，AI 團隊自己分工協作、共享記憶、定時回報。今天的十四道關卡，就是照著這四階一階一階往上走：先問 AI，再叫它寫，接著叫它做，最後由我當專案總監，帶著一支 AI 團隊推廣加盟。課程還往上多走了一階，Lv.5「換一個 AI 也接得上」：換了 AI，不用從頭教一次。</p>
       </div>
     </section>
 
@@ -283,7 +295,7 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
       <div class="col">
         <div class="kicker">第三部分</div>
         <h2>今天闖過的關卡</h2>
-        <p>九道關卡分成四個等級，每一關都比上一關多交給 AI 一點。從讓 AI 讀懂資料，到讓 AI 自己動手，再到當上專案總監，帶著一支 AI 團隊推廣加盟。</p>
+        <p>十四道關卡分成五個等級，最後一關是自由練習。每一關都比上一關多交給 AI 一點：從讓 AI 讀懂資料，到讓 AI 自己動手，再到當上專案總監帶一支 AI 團隊，最後換一個 AI 也能接著做。</p>
       </div>
       <div class="wide">
         <div class="lvgroups">
@@ -308,26 +320,43 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
             </ol>
           </div>
           <div class="lvg">
-            <div class="lvh"><span class="lvn">Lv.4</span><b>你是專案總監</b><small>加盟開放第 1–3 週</small></div>
+            <div class="lvh"><span class="lvn">Lv.4</span><b>你是專案總監</b><small>加盟開放第 1–4 週</small></div>
             <ol class="lvl">
               <li><span class="no">6</span><div><h3>消化加盟辦法，寫文案、做海報</h3><p>讀法務版加盟辦法，做出兩百字文案和海報，不做沒確認過的承諾。</p></div></li>
               <li><span class="no">7</span><div><h3>共同大腦</h3><p>建一個所有 AI 開工前都先讀的資料夾。</p></div></li>
               <li><span class="no">8</span><div><h3>任命 AI 營運長</h3><p>請 AI 當營運長，每天看報表、分派工作，先交出加盟推廣的分工計畫。</p></div></li>
               <li><span class="no">9</span><div><h3>開一個練習社群</h3><p>讓社群 AI 在 FB 開一個加盟練習社群，放上文案和海報，標明是課程練習。</p></div></li>
-              <li class="next"><span class="no">10</span><div><h3>等老師開放</h3><p>老師一開，按鈕就會亮。</p></div></li>
+              <li><span class="no">10</span><div><h3>週報 AI 上工</h3><p>開一位專職的週報 AI，做一期給員工看的加盟特刊。只交稿，老闆看過才發。</p></div></li>
+            </ol>
+          </div>
+          <div class="lvg">
+            <div class="lvh"><span class="lvn">Lv.5</span><b>換一個 AI 也接得上</b><small>加盟開放第 5–6 週</small></div>
+            <ol class="lvl">
+              <li><span class="no">11</span><div><h3>換一個 AI，也接得上大腦</h3><p>公司導入 Claude。讓它接上同一個共同大腦，再考考它，確定它真的知道我們的事。</p></div></li>
+              <li><span class="no">12</span><div><h3>請 Claude 做加盟宣傳頁</h3><p>做一個一打開就會動的宣傳頁，像在看一支短片。數字、日期要和原文一樣。</p></div></li>
+              <li><span class="no">13</span><div><h3>請 Claude 剪短影音</h3><p>把手機裡的課堂短片交給 Claude，剪成一分鐘的短影音，加上字卡和配樂。</p></div></li>
+            </ol>
+          </div>
+          <div class="lvg">
+            <div class="lvh"><span class="lvn">自由</span><b>結業前的自由練習</b><small>AI 工程師</small></div>
+            <ol class="lvl">
+              <li><span class="no">14</span><div><h3>AI 工程師上工</h3><p>請 AI 寫一個小工具：問一個問題，兩個 AI 同時回答，左右擺在一起。</p></div></li>
+              <li class="next"><span class="no">15</span><div><h3>等老師開放</h3><p>老師一開，按鈕就會亮。</p></div></li>
             </ol>
           </div>
         </div>
         <div class="team">
-          <div class="team-h">闖完第 9 關，我手上的 AI 團隊</div>
+          <div class="team-h">闖完第 14 關，我手上的 AI 團隊</div>
           <div class="org">
             <div class="node me"><b>我</b><span>專案總監，設定目標、做最後確認</span></div>
             <div class="link" aria-hidden="true">↓</div>
             <div class="node"><b>AI 營運長</b><span>看報表、分派工作，有事先回報</span></div>
             <div class="link" aria-hidden="true">↓</div>
             <div class="row">
-              <div class="node"><b>社群 AI</b><span>經營加盟練習社群</span></div>
-              <div class="node"><b>更多幫手</b><span>電子報、週報、廣告⋯⋯依分工計畫加入</span></div>
+              <div class="node"><b>社群 AI</b><span>對外，經營加盟練習社群</span></div>
+              <div class="node"><b>週報 AI</b><span>對內，寫員工週報和加盟特刊</span></div>
+              <div class="node"><b>Claude</b><span>宣傳頁、短影音</span></div>
+              <div class="node"><b>AI 工程師</b><span>寫程式、做小工具</span></div>
             </div>
             <div class="node brainnode"><b>共同大腦</b><span>每個 AI 開工前都先讀</span></div>
           </div>
@@ -379,15 +408,49 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
           <li>修改前先重讀現況，避免蓋掉別的 AI 做的修改。</li>
           <li>對外發布前，一定要經過我確認。</li>
         </ul>
+        <p>到了第 11 關，共同大腦的價值才真正顯現。公司導入 Claude，老闆在信裡只交代一句：新的 AI，不要重新教一次。Claude 接上同一個資料夾，先讀入口和規則，加盟金多少、說明會哪天、首波開放幾家，它都答得出來。換 AI 的成本，從「重新交代一遍」變成「讀一個資料夾」。</p>
         <div class="aside"><b>這個網站就是一個例子。</b>寫這一段時，Claude 直接讀了 Codex 早上建好的 START-HERE.md 和 AGENTS.md，上面的資料夾結構和規則都來自那兩份檔案。不同的 AI，讀同一個大腦，接著做下去。</div>
+      </div>
+    </section>
+
+    <section id="tool" class="gut">
+      <div class="col">
+        <div class="kicker">第五部分 · 第 14 關作品</div>
+        <h2>雙 AI 討論室：兩個顧問，一起回答</h2>
+        <p>最後一關的信是這樣寫的：這一整天，你一直在 ChatGPT 和 Claude 兩個視窗中間貼來貼去。幫我做一個小工具，我問一個問題，兩個 AI 同時回答，左右擺在一起。</p>
+        <p>我請 Claude 當 AI 工程師，做了一個「雙 AI 討論室」。它用我電腦上已經登入的 ChatGPT 和 Claude 帳號，不需要另外申請金鑰。</p>
+      </div>
+      <div class="wide">
+        <figure class="shot">
+          <img src="media/duo-room.jpg" alt="雙 AI 討論室畫面：左邊是 GPT 的回答，右邊是 Claude 的回答，兩邊討論同一個問題" loading="lazy" width="1280" height="631">
+          <figcaption>左邊 GPT、右邊 Claude，討論「AI 助理能不能自己發布貼文」。兩邊都先讀了共同大腦，所以會引用規則原文。</figcaption>
+        </figure>
+      </div>
+      <div class="col">
+        <p>做出來之後，我發現只是「左右擺在一起」還不夠，所以多加了幾步：</p>
+        <ul class="rules">
+          <li><b>先各自回答</b>：第 1 輪彼此看不到對方的答案，避免互相影響。</li>
+          <li><b>再互相回應</b>：寫出同意什麼、不同意什麼、修正後的立場。</li>
+          <li><b>一起交出結論</b>：一位起草共同結論，另一位審閱。分歧的地方列成對照表，並標出需要我親自決定的事。</li>
+          <li><b>我可以插話</b>：補一句條件或質疑，兩位再討論一輪。</li>
+        </ul>
+        <p>我也用同樣的想法做了一次「紅隊審核」：請 Claude 寫好日子的招商文案，再交給 GPT 專門挑毛病。第一輪挑出六個問題，例如把「總部得提供估價協助」寫得像固定服務、短版漏了「按營業額計算」。改完再審兩輪才定稿。一個 AI 寫、另一個 AI 審，比自己看一遍可靠得多。</p>
       </div>
     </section>
 
     <section id="scenes" class="gut">
       <div class="col">
-        <div class="kicker">第五部分</div>
+        <div class="kicker">第六部分</div>
         <h2>課堂現場</h2>
-        <p>福哥要我們在重要時刻用手機錄 5 到 10 秒，下課前剪成課程短影音。這三段是今天錄下來的畫面。</p>
+        <p>福哥要我們在重要時刻用手機錄 5 到 10 秒，下課前剪成課程短影音。這就是第 13 關的作業。</p>
+        <div class="recap">
+          <video src="media/recap.mp4" poster="media/recap.jpg" controls playsinline preload="none"></video>
+          <div>
+            <h3>我的一分鐘心得影片</h3>
+            <p>我把手機裡的照片和短片放進一個資料夾，請 Claude 挑素材、排順序、上字幕、配樂，剪成這支 59 秒的短影音。影片右上角全程標示「課程練習」。</p>
+          </div>
+        </div>
+        <p>下面三段是剪進影片前的原始畫面。</p>
       </div>
       <div class="wide">
         <div class="reels">
@@ -400,11 +463,12 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 
     <section id="notes" class="gut">
       <div class="col">
-        <div class="kicker">第六部分</div>
+        <div class="kicker">第七部分</div>
         <h2>組長心得</h2>
         <p>以前學一個新工具，通常是先聽完一堂課，回家再自己試，試到一半就卡住。今天反過來，先做，做的過程中遇到問題就問 AI，問不出來就跟小隊討論。一天下來，每個人手上都有自己做出來的東西。</p>
         <p>當組長也讓我多看到一件事。同樣一道關卡，每個人下指令的方式都不一樣，得到的結果也不一樣。互相看別人怎麼問 AI，本身就是很好的學習。</p>
         <p>今天我也給自己找了點麻煩。早上本來應該用 ChatGPT 桌機版，我卻同時開了 Codex、瀏覽器版 ChatGPT 和 Claude 桌機版，三邊切來切去，特別忙，只能盡量跟上。但也因為這樣，到了共同大腦那一關，我特別有感：AI 越多，越需要一個大家都讀得到的大腦。福哥開場就說過，他自己是在一個介面裡讓三個 AI 一起討論、再彙整結果。我今天手忙腳亂的那套，正是他每天在用的做法的雛形。</p>
+        <p>有趣的是，課程最後一關正好解決了這個麻煩。老闆的信說，你一直在兩個視窗中間貼來貼去，做一個小工具吧。早上的手忙腳亂，到了下午變成一個自己做出來的雙 AI 討論室。一天之內，從「用 AI」走到「請 AI 幫我做工具」。</p>
         <div class="pair">
           <figure><img src="media/p3178.jpg" alt="投影片：今天的小任務，記錄你的 AI 學習之旅，重要時刻用手機錄 5 到 10 秒" loading="lazy" width="1600" height="1200"><figcaption>今天的小任務：記錄自己的 AI 學習之旅。</figcaption></figure>
           <figure><img src="media/p3184.jpg" alt="從教室後方看全班學員在筆電前實作" loading="lazy" width="1600" height="1200"><figcaption>從教室後方看，大家都在跟 AI 一起工作。</figcaption></figure>
@@ -413,11 +477,12 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
           <p>今天最大的收穫，不是讓 AI 做更多事，而是學會怎麼把事情交給 AI，再讓不同的 AI 共用同一個大腦，下一次工作不必從頭開始。</p>
           <cite>Will，第三小隊組長</cite>
         </blockquote>
-        <p>今天記下的三句話：</p>
+        <p>今天記下的四句話：</p>
         <ul class="sayings">
           <li><q>會不會我們把 AI 用小了？</q><span>福哥開場</span></li>
           <li><q>有問題先問 AI</q><span>課堂投影片</span></li>
           <li><q>說話有溫度，事項有重點</q><span>闖關心得</span></li>
+          <li><q>新的 AI，不要重新教一次</q><span>第 11 關，老闆的信</span></li>
         </ul>
         <a class="end" href="https://will1975.substack.com/p/f94" target="_blank" rel="noopener">
           <span><small>闖關作品 · 讓 AI 發布的電子報</small>好日子咖啡｜第二週營運週報</span><span aria-hidden="true">↗</span>
